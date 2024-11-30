@@ -1,4 +1,40 @@
 fn main() {
+    struct Rectangle {
+        width: f64,
+        height: f64,
+    }
+
+    impl Rectangle {
+        fn area(&self) -> f64 {
+            self.width * self.height
+        }
+    }
+
+    let rect1 = Rectangle {
+        width: 54.5,
+        height: 60.4,
+    };
+
+    println!("{}", rect1.area());
+
+    struct User {
+        active: bool,
+        username: String,
+        email: String,
+        sign_in_count: u64,
+    }
+
+    impl User {
+        fn build_user(email: String, username: String) -> User {
+            User {
+                active: true,
+                username,
+                email,
+                sign_in_count: 1,
+            }
+        }
+    }
+
     let mut account = BankAccount {
         owner: "Alice".to_string(),
         balance: 150.55,
